@@ -7,9 +7,6 @@ async function getData(){
 
 getData().then(data=>{
   console.log(data)
-
   localStorage.setItem('first',  JSON.stringify(data))
 })
 
-
-console.log(localStorage.getItem('first'))
