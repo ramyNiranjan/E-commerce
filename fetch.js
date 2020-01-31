@@ -13,3 +13,4 @@ getData().then(data=>{
 
 
 console.log(localStorage.getItem('first'))
+
