@@ -1,18 +1,49 @@
 {
   "products": [
     {
+      "name": "Lenovo Legion Y7000.",
+      "image": "Images/jay-prajapati-Jp6Z2Mp5Sq0-unsplash.jpg",
+      "price": "7220.00"
+    },
+    {
+      
+      "name": "Macbook",
+      "image": "Images/michal-kubalczyk-WecngmAT-KY-unsplash.jpg",
+      "price": "10330.00"
+    },
+    {
+      
       "name": "bla",
       "image": "bal bal",
       "price": "20.00"
     },
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {}
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"},
+    {
+      "name": "bla",
+      "image": "bal bal",
+      "price": "20.00"}
   ]
 }

@@ -10,3 +10,9 @@ getData().then(data=>{
   localStorage.setItem('first',  JSON.stringify(data))
 })
 
+
+
+
+
+console.log(localStorage.getItem('first'))
+
