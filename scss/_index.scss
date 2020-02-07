@@ -1,0 +1,222 @@
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;
+  align-self: center;
+  background: #3a3535;
+  height: 10vh;
+  width: 100%;
+  z-index: 2;
+
+  &__logo {
+    font-size: 25px;
+    align-self: center;
+
+    
+  }
+  &__search {
+    // align-self: center;
+    margin-left: auto;
+    position: relative;
+    margin-right: 5px;
+    & input {
+      border-radius: 10px;
+      border-style: none;
+      outline-style: none;
+      text-align: center;
+      height: 30px;
+      align-self: center;
+    }
+    & i {
+      position: absolute;
+      right: 10px;
+      top: 6px;
+      color: #4e4e4e;
+    }
+  }
+  &__cart {
+    font-size: 40px;
+    align-self: center;
+    position: relative;
+    color: #e06324;
+    &-count {
+      position: absolute;
+      color: #fff;
+      font-size: 15px;
+      right: 12px;
+      top: 15px;
+    }
+  }
+}
+
+.hero-container {
+  position: relative;
+  height: calc((100vh - 62.55px) - 50vh);
+  width: 100%;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background: url("../images/hero6.jpg") no-repeat center center/cover;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: 0.8;
+    // z-index: -1;
+  }
+  &__header {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  &__card {
+    background: rgb(70, 66, 66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    height: 360px;
+    transition: all 0.5s;
+    box-shadow: 11px 9px 6px -7px rgba(26, 22, 21, 1);
+    // &:hover {
+
+    // }
+  }
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    & img {
+      display: block;
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+    }
+  }
+  &__add-wrapper {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // place-items: center;
+    // align-self: center;
+    // align-items: center;
+    margin-bottom: 10px;
+    @for $i from 1 through 3 {
+      :nth-child(#{$i}) {
+        cursor: pointer;
+        background: #619362;
+        // background: complement( rgb(70, 66, 66));
+
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all 0.5s;
+        transform: scale(1);
+        // margin: 0px 5px;
+        margin-left: 5px;
+      }
+    }
+    :hover,
+    :focus {
+      background: #e06324;
+    }
+    :active {
+      transform: scale(0.9);
+    }
+  }
+  &__titel {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: medium;
+    text-align: center;
+  }
+}
+
+.footer {
+  background: #3a3535;
+  width: 100%;
+  padding: 30px;
+  color: #fff;
+  font-size: 10px;
+  margin-top: 20px;
+  &__extra {
+    width: 100%;
+  }
+  &__extra-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+    font-size: 15px;
+  }
+  &__extra-page {
+    // width: 100%;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-evenly;
+    // justify-content: center;
+    padding: 10px;
+    align-items: center;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    // & p,
+    // & i {
+    //   margin: 0px 10px;
+    // }
+    cursor: pointer;
+    & i {
+      font-size: 15px;
+    }
+    @for $i from 1 through 3 {
+      :nth-child(#{$i}) {
+        &:hover {
+          color: #e06324;
+        }
+      }
+    }
+  }
+}
