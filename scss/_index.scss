@@ -14,8 +14,6 @@
   &__logo {
     font-size: 25px;
     align-self: center;
-
-    
   }
   &__search {
     // align-self: center;
@@ -181,6 +179,9 @@
   color: #fff;
   font-size: 10px;
   margin-top: 20px;
+  position: relative;
+  left: 0;
+  bottom: 0;
   &__extra {
     width: 100%;
   }
