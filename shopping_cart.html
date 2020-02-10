@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+
+        <div id="header__logo-div">
+            <img src="https://via.placeholder.com/30" alt="GHz Data logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li id="nav__search-li">
+                    <input type="search" name="" id="nav__search-input">
+                </li>
+                
+                <li id="nav__shopping-cart-li">
+                    <a id="nav__shopping-cart-a" href="shopping_cart.html"></a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="cart-headlines-section">
+
+        <div id="cart-headlines-section__headline-div">
+            <h1 id="cart-headlines-section__headline-h1">SHOPPING CART</h1>
+        </div>
+
+        <div id="cart-headlines-section__no-content-div">
+            <h2 id="cart-headlines__no-content-h2">THERE ARE NO ITEMS IN THE SHOPPING CART.</h2>
+        </div>
+
+        <div id="cart-headlines-section__continue-shopping-div">
+            <h3 id="cart-headlines__continue-shoppin-h3">CONTINUE SHOPPING</h3>
+        </div>
+
+    </section>
+
+    <section id="cart-content-section">
+
+        <div id="cart-content-section__wrapper-of-products-div">
+
+            <h1 id="cart-content-section__item-h1"> ITEM</h1>
+            <h1 id="cart-content-section__price-h1">PRICE</h1>
+            <h1 id="cart-content-section__qty-h1">QTY</h1>
+            <h1 id="cart-content-section__total-h1">TOTAL</h1>
+
+            <div id="product-lenovo-div">
+
+                <div id="product-lenovo-div__img-div">
+                    <img id="product-lenovo-div__lenovo-img" src="https://via.placeholder.com/150" alt="Picture of Lenovo Legion Y7000.">
+                </div>
+    
+                <div id="product-lenovo-div__specifications-div">
+    
+                    <div id="product-lenovo-div__hardware-specs-div">
+                        <p id="product-lenovo-div__product-name-p">Lenovo Legion Y7000</p>
+                        <p id="product-lenovo-div__cpu-name-p">CPU : AMD</p>
+                        <p id="product-lenovo-div__harddrive-size-p">HD : 500 GB</p>
+                    </div>
+    
+                    <div id="product-lenovo-div__price-div">
+                        <p id="product-lenovo-div__price-p">$ 524</p>
+                    </div>
+    
+                </div>
+    
+                <div id="product-lenovo-div__quantity-div">
+                    <label id="product-lenovo-div__number-input-label" for="product-div__number-input">QTY : </label>
+                    <input id="product-lenovo-div__number-input" type="number">
+                </div>
+    
+            </div>
+    
+            <div id="product-macbook-div">
+    
+                <div id="product-macbook-div__img-div">
+                    <img id="product-div__macbook-img" src="https://via.placeholder.com/150" alt="Picture of Macbook.">
+                </div>
+    
+                <div id="product-macbook-div__specifications-div">
+    
+                    <div id="product-macbook-div__hardware-specs-div">
+                        <p id="product-macbook-div__product-name-p">Macbook</p>
+                        <p id="product-macbook-div__cpu-name-p">CPU : AMD</p>
+                        <p id="product-macbook-div__harddrive-size-p">HD : 1 TB</p>
+                    </div>
+    
+                    <div id="product-macbook-div__price-div">
+                        <p id="product-macbook-div__price-p">$ 524</p>
+                    </div>
+    
+                </div>
+    
+                <div id="product-macbook-div__quantity-div">
+                    <label id="product-macbook-div__number-input-label" for="product-div__number-input">QTY : </label>
+                    <input id="product-macbook-div__number-input" type="number">
+                </div>
+    
+            </div>
+    
+            <div id="product-hp-zbook-div">
+    
+                <div id="product-hp-zbook-div__img-div">
+                    <img id="product-hp-zbook-div__zbook-img" src="https://via.placeholder.com/150" alt="Picture of HP Zbook.">
+                </div>
+    
+                <div id="product-hp-zbook-div__specifications-div">
+    
+                    <div id="product-hp-zbook-div__hardware-specs-div">
+                        <p id="product-hp-zbook-div__product-name-p">HP Zbook</p>
+                        <p id="product-hp-zbook-div__cpu-name-p">CPU : Intel</p>
+                        <p id="product-hp-zbook-div__harddrive-size-p">HD :    1 TB</p>
+                    </div>
+    
+                    <div id="product-hp-zbook-div__price-div">
+                        <p id="product-hp-zbook-div__price-p">$ 524</p>
+                    </div>
+    
+                </div>
+    
+                <div id="product-hp-zbook-div__quantity-div">
+                    <label id="product-hp-zbook-div__number-input-label" for="product-div__number-input">QTY : </label>
+                    <input id="product-hp-zbook-div__number-input" type="number">
+                </div>
+    
+            </div>
+        </div>
+        
+
+        
+
+    </section>
+
+    <section id="subtotal-section">
+
+        <div id="subtotal-section__subtotal-sum-div">
+            <h1 id="subtotal-section__subtotal-sum-h1">SUBTOTAL : $3234</h1>
+        </div>
+
+        <div id="subtotal-section__update-div">
+            <h3 class="subtotal-section__update-h3">UPDATE SUBTOTAL</h3>
+            <h3 class="subtotal-section__update-h3">EMPTY SHOPPING CART</h3>
+        </div>
+
+    </section>
+
+    <section id="checkout-section">
+        
+        <div id="checkout-section__buttons-div">
+
+            <button id="checkout-section__checkout-btn">CHECKOUT</button>
+
+            <div id="checkout-section__gpay-logo-div">
+                <img id="checkout-section__gpay-logo-img" src="https://via.placeholder.com/30" alt="GPay logo">
+            </div>
+
+            <div id="checkout-section__paypal-logo-div">
+                <img id="checkout-section__paypal-logo-img" src="https://via.placeholder.com/30" alt="PayPal logo">
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div id="footer__extra-div">
+            <h2 id="footer__extra-h2">EXTRA</h2>
+        </div>
+
+        <div id="footer__extra-menus-div">
+            <h3 class="footer__extra-h3s">ABOUT US</h3>
+            <h3 class="footer__extra-h3s">FAQ</h3>
+            <h3 class="footer__extra-h3s">WHOLESALE</h3>
+        </div>
+
+        <div id="footer__social-div">
+
+            <h2 id="footer__social-h2">SOCIAL</h2>
+
+            <div id="footer__social-logos-div">
+
+                <img id="footer__fb-logo-img" src="https://via.placeholder.com/30" alt="Facebook logo">
+                <img id="footer__twitter-logo-img" src="https://via.placeholder.com/30" alt="Twitter logo">
+                <img id="footer__insta-logo-img" src="https://via.placeholder.com/30" alt="Instagram logo">
+                <img id="footer__email-us-logo-img" src="https://via.placeholder.com/30" alt="E-mail us pictogram">
+
+            </div>
+
+        </div>
+
+        <div id="footer__logo-div">
+            <img id="footer__logo-img" src="https://via.placeholder.com/30" alt="GHz Data logo">
+        </div>
+
+    </footer>
+    
+</body>
+</html>
