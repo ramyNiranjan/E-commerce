@@ -153,3 +153,11 @@ function populateDom(data=null,total=null,id=null){
   result.innerHTML+=html
 }
 
+
+
+document.getElementById("checkButton").addEventListener("click", function(){
+
+  
+window.location.href = "checkout.html";
+  
+});
