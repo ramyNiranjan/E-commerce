@@ -176,16 +176,6 @@ function populateDom(data=null,total=null,id=null){
   result.innerHTML+=html
 }
 
-<<<<<<< HEAD
 cartCheckout.addEventListener('click',()=>{
   window.location.href='../dist/checkout.html'
 })
-=======
-
-document.getElementById("checkButton").addEventListener("click", function(){
-
-  
-window.location.href = "checkout.html";
-  
-});
->>>>>>> 4c853e69a709fce6b8f572abdf159bff2c8bda5a
