@@ -15,6 +15,7 @@
   &__heading {
     color: #e06324;
     font-weight: bold;
+    text-align: center;
   }
   &__underline {
     margin: 20px 0px;
@@ -93,6 +94,9 @@
       label {
         color: rgb(168, 167, 167);
       }
+      // &-qty {
+      //   font-size: 20px;
+      // }
     }
     :nth-child(4) {
       grid-column: 2 / span 1;
@@ -175,6 +179,7 @@
       background: rgb(70, 66, 66);
       grid-gap: 5px;
       margin-bottom: 10px;
+      transition: all 0.6s;
       // box-shadow: 11px 9px 6px -7px rgba(26, 22, 21, 1);
 
       :nth-child(1) {

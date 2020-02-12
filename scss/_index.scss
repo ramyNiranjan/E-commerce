@@ -85,6 +85,8 @@
     font-size: 30px;
     color: #fff;
     text-align: center;
+    letter-spacing: 1px;
+    color: #e06324;
   }
 }
 
@@ -98,6 +100,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  transition: all 0.6s;
   &__card {
     background: rgb(70, 66, 66);
     display: flex;
@@ -202,6 +205,7 @@
     align-items: center;
     letter-spacing: 1px;
     transition: all 0.5s;
+
     // & p,
     // & i {
     //   margin: 0px 10px;

@@ -22,6 +22,181 @@ li {
   list-style: none;
 }
 
+.rotate {
+  -webkit-animation: rotate 0.8s;
+          animation: rotate 0.8s;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateY(-200deg);
+            transform: rotateY(-200deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateY();
+            transform: rotateY();
+  }
+}
+
+@keyframes rotate {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateY(-200deg);
+            transform: rotateY(-200deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateY();
+            transform: rotateY();
+  }
+}
+
+.pop {
+  -webkit-animation: pop 0.4s;
+          animation: pop 0.4s;
+}
+
+@-webkit-keyframes slide3 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-200vw);
+            transform: translateX(-200vw);
+  }
+}
+
+@keyframes slide3 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-200vw);
+            transform: translateX(-200vw);
+  }
+}
+
+.slide {
+  -webkit-animation: slide 0.5s;
+          animation: slide 0.5s;
+}
+
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-200vw);
+            transform: translateX(-200vw);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-200vw);
+            transform: translateX(-200vw);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.slide1 {
+  -webkit-animation: slide1 0.5s;
+          animation: slide1 0.5s;
+}
+
+@-webkit-keyframes slide1 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-200vh);
+            transform: translateY(-200vh);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide1 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-200vh);
+            transform: translateY(-200vh);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.removed-item {
+  -webkit-animation: removed-item-animation 0.8s cubic-bezier(0.65, -0.02, 0.72, 0.29);
+          animation: removed-item-animation 0.8s cubic-bezier(0.65, -0.02, 0.72, 0.29);
+}
+
+@-webkit-keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(-800px);
+            transform: translateX(-800px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-800px);
+            transform: translateX(-800px);
+  }
+}
+
+@keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(-800px);
+            transform: translateX(-800px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-800px);
+            transform: translateX(-800px);
+  }
+}
+
 .nav {
   position: -webkit-sticky;
   position: sticky;
@@ -136,6 +311,8 @@ li {
   font-size: 30px;
   color: #fff;
   text-align: center;
+  letter-spacing: 1px;
+  color: #e06324;
 }
 
 .products {
@@ -154,6 +331,8 @@ li {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 20px;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
 }
 
 .products__card {
@@ -369,6 +548,7 @@ li {
 .cart__heading {
   color: #e06324;
   font-weight: bold;
+  text-align: center;
 }
 
 .cart__underline {
@@ -582,6 +762,8 @@ li {
     background: #464242;
     grid-gap: 5px;
     margin-bottom: 10px;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
   }
   .cart__products :nth-child(1) {
     -ms-grid-column: 1;

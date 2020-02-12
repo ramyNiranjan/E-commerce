@@ -6,6 +6,7 @@ let sum = document.querySelector('.sum')
 let cartCount = document.querySelector('.nav__cart-count')
 let empty = document.querySelector('.cart__empty p')
 let cartResult = document.querySelector('.cart__result')
+let cartCheckout = document.querySelector('.cart__checkout')
 
 getCartData()
 getTotal()
@@ -44,6 +45,7 @@ function creatingProdCOuntObj() {
   }, {})
 }
 let obj = creatingProdCOuntObj()
+
 empty.addEventListener('click',(e)=>{
  
   localStorage.setItem('cart', JSON.stringify(creatingArr()))
@@ -52,6 +54,7 @@ empty.addEventListener('click',(e)=>{
   let element = document.querySelector('.cart__result');
   while (element.firstChild) {
     element.removeChild(element.firstChild);
+    element.classList.add("removed-item")
   }
   cartCount.innerHTML=0
   wrapper.style.display = 'none'
@@ -89,17 +92,21 @@ function getCartData(){
   close.forEach(item=>{
     
     item.addEventListener('click', (e) => {
+      console.log(e)
+      // e.target.parentElement.classList.add("removed-item")
+      
       let cart = JSON.parse(localStorage.getItem('cart'))
       let singelCount = JSON.parse(localStorage.getItem('singelCount'))
       cart[e.target.parentElement.id]=[]
       singelCount[e.target.parentElement.id]=0
-
+      
       localStorage.setItem('cart',JSON.stringify(cart))
       localStorage.setItem('totalProd', cart.flat().length)
       localStorage.setItem('singelCount', JSON.stringify(singelCount))
       cartCount.innerHTML = localStorage.getItem('totalProd')
       sum.innerHTML = calSum()
       e.target.parentElement.remove()
+     
       if(!cart.flat().length){
         wrapper.style.display = 'none'
         cartText.style.display = 'block'
@@ -162,10 +169,13 @@ function populateDom(data=null,total=null,id=null){
             </p>
             <div class="cart__products-quntity">
               <label for="qty">Qty</label>
-              <input class="qty" type="number" name="" id="qty" value="${total.length}" />
+              <input class="qty" type="number" min="1" id="qty" value="${total.length}" />
             </div>
           </div>`
 
   result.innerHTML+=html
 }
 
+cartCheckout.addEventListener('click',()=>{
+  window.location.href='../dist/checkout.html'
+})
