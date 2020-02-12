@@ -17,7 +17,6 @@
     
      let obj=creatingProdCOuntObj()
     showingSigelCount(obj)
-    console.log(obj)
     let search = document.querySelector('.search')
     let productsCard = document.querySelectorAll('.products__card')
     let cartCount = document.querySelector('.nav__cart-count')
@@ -27,15 +26,6 @@
     addToCart(wrapper, cartCount, total,arr,obj)
     searchItems(search, productsCard)
   })
-
-  function getProducts() {
-    // let data = JSON.parse(localStorage.getItem('data'))
-    // let products = data.products
-    // products.forEach((item) => {
-    //   upDateUi(item)
-    // })
-  }
-
 
   function upDateUi(data) {
     let mainUi = document.querySelector('.products')
@@ -112,7 +102,6 @@ function showinSingelProductCount(id,count,obj){
     }
     
   })
-  console.log(obj)
   localStorage.setItem('singelCount',JSON.stringify(obj))
  
  
@@ -155,7 +144,7 @@ function addToCart(wrapper, cartCount,total,arr,obj){
         cartData = cartData ? cartData : arr
         cartData[parseInt(currentId)].pop(pushObj)
         localStorage.setItem('cart', JSON.stringify(cartData))
-        let x=showinSingelProductCount(currentId, cartData[currentId].length,obj)
+        showinSingelProductCount(currentId, cartData[currentId].length,obj)
         let currentCount = parseInt(localStorage.getItem('totalProd'))
         currentCount = currentCount ? currentCount : total
         total = findingLength(cartData)

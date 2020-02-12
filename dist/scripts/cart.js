@@ -52,13 +52,17 @@ empty.addEventListener('click',(e)=>{
   localStorage.setItem('totalProd', JSON.stringify(0))
   localStorage.setItem('singelCount', JSON.stringify(obj))
   let element = document.querySelector('.cart__result');
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-    element.classList.add("removed-item")
-  }
+  // element.style.transform = 'translateX(-200vw)'
+  // console.log(Array.from(element.children))
+  Array.from(element.children).forEach(item=>{
+    console.log(item.style.transform = 'translateX(-200vw)')
+  })
   cartCount.innerHTML=0
-  wrapper.style.display = 'none'
-  cartText.style.display = 'block'
+  setTimeout(() => {
+    wrapper.style.display = 'none'
+    cartText.style.display = 'block'
+  }, 600);
+ 
 })
 
 
@@ -92,24 +96,24 @@ function getCartData(){
   close.forEach(item=>{
     
     item.addEventListener('click', (e) => {
-      console.log(e)
-      // e.target.parentElement.classList.add("removed-item")
-      
+      e.target.parentElement.style.transform='translate(-100vw)'
       let cart = JSON.parse(localStorage.getItem('cart'))
       let singelCount = JSON.parse(localStorage.getItem('singelCount'))
       cart[e.target.parentElement.id]=[]
       singelCount[e.target.parentElement.id]=0
-      
       localStorage.setItem('cart',JSON.stringify(cart))
       localStorage.setItem('totalProd', cart.flat().length)
       localStorage.setItem('singelCount', JSON.stringify(singelCount))
       cartCount.innerHTML = localStorage.getItem('totalProd')
       sum.innerHTML = calSum()
-      e.target.parentElement.remove()
-     
       if(!cart.flat().length){
-        wrapper.style.display = 'none'
-        cartText.style.display = 'block'
+        setTimeout(() => {
+          wrapper.style.display = 'none'
+          cartText.style.display = 'block'
+        }, 600);
+          
+        
+        
       }
     })
   })
@@ -125,13 +129,6 @@ input.forEach(item=>{
     let singelCount = JSON.parse(localStorage.getItem('singelCount'))
     localStorage.setItem('totalProd', cart.flat().length)
     let temArr=[]
-    // if (e.target.value==0){
-    //   setTimeout(() => {
-    //     if(e.target.value == 0){
-    //       e.target.parentElement.parentElement.remove()
-    //     } }, 3000);
-    //    }
-
     if (e.target.value){
       for (let i = 0; i < e.target.value ; i++) {
         temArr.push(cart[id][0])

@@ -76,7 +76,6 @@ function subtotal(data) {
 function removingAllFromLocalStorage(){
   let keysToRemove = ["cart", "singelCount",'totalProd'];
   keysToRemove.forEach(item=>{
-    console.log(item)
     localStorage.removeItem(item)
   })
 }
