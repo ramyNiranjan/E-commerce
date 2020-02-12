@@ -12,17 +12,19 @@
     let products = data.products
     products.forEach((item) => {
       upDateUi(item)
-      arr.push(new Array)
-      
-    })
+      arr.push(new Array)})
     creatingArr(arr)
+    
+     let obj=creatingProdCOuntObj()
+    showingSigelCount(obj)
+    console.log(obj)
     let search = document.querySelector('.search')
     let productsCard = document.querySelectorAll('.products__card')
     let cartCount = document.querySelector('.nav__cart-count')
     let wrapper = document.querySelectorAll('.products__add-wrapper')
     let arrCart = JSON.parse(localStorage.getItem('cart'))
     let total = findingLength(arrCart)
-    addToCart(wrapper, cartCount, total,arr)
+    addToCart(wrapper, cartCount, total,arr,obj)
     searchItems(search, productsCard)
   })
 
@@ -87,37 +89,54 @@ function creatingArr(arr) {
   let data = JSON.parse(localStorage.getItem('cart'))
   data = data ? data : arr
   localStorage.setItem('cart',JSON.stringify(data))
-  // data.reduce((arr) => {
-  //   arr.push(new Array)
-  //   return arr
-  // }, [])
 
 }
 
 function creatingProdCOuntObj(){
-
+  let cartData = JSON.parse(localStorage.getItem('cart'))
+ 
+  return cartData.reduce((obj,curr,i) => {
+     obj[i]=0
+     return obj
+  },{})
 }
 
 
-function showinSingelProductCount(id,count){
+function showinSingelProductCount(id,count,obj){
   let show = document.querySelectorAll('.products___add')
-  let singelProdCount={}
   show.forEach(item=>{
     let domId = item.parentElement.parentElement.id
     if(domId==id){
      item.innerHTML=count
-     singelProdCount[`${domId}`]=count
+      obj[domId]=count
     }
-  
+    
   })
-  console.log(singelProdCount)
+  console.log(obj)
+  localStorage.setItem('singelCount',JSON.stringify(obj))
+ 
+ 
+}
+
+function showingSigelCount(obj){
+  let show = document.querySelectorAll('.products___add')
+  let count=JSON.parse(localStorage.getItem('singelCount'))
+  count=count?count:obj
+  console.log(count)
+  show.forEach(item => {
+    let domId = item.parentElement.parentElement.id
+    if (count.hasOwnProperty(domId) ) {
+      item.innerHTML = count[domId]
+        
+    }
+
+  })
+
 }
 
 
-
-
  
-function addToCart(wrapper, cartCount,total,arr){
+function addToCart(wrapper, cartCount,total,arr,obj){
   wrapper.forEach(item => {
     item.addEventListener('click', (e) => {
       let currentId = e.target.parentElement.parentElement.id
@@ -136,8 +155,7 @@ function addToCart(wrapper, cartCount,total,arr){
         cartData = cartData ? cartData : arr
         cartData[parseInt(currentId)].pop(pushObj)
         localStorage.setItem('cart', JSON.stringify(cartData))
-        showinSingelProductCount(currentId, cartData[currentId].length)
-
+        let x=showinSingelProductCount(currentId, cartData[currentId].length,obj)
         let currentCount = parseInt(localStorage.getItem('totalProd'))
         currentCount = currentCount ? currentCount : total
         total = findingLength(cartData)
@@ -149,7 +167,7 @@ function addToCart(wrapper, cartCount,total,arr){
         let cartData = JSON.parse(localStorage.getItem('cart'))
         cartData = cartData ? cartData : arr
         cartData[parseInt(currentId)].push(pushObj)
-        showinSingelProductCount(currentId, cartData[currentId].length)
+        showinSingelProductCount(currentId, cartData[currentId].length,obj)
         localStorage.setItem('cart', JSON.stringify(cartData))
 
         let currentCount = parseInt(localStorage.getItem('totalProd'))

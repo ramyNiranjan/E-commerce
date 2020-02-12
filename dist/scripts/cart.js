@@ -33,11 +33,22 @@ function creatingArr() {
   }, [])
 
 }
-  
+
+
+function creatingProdCOuntObj() {
+  let cartData = JSON.parse(localStorage.getItem('cart'))
+
+  return cartData.reduce((obj, curr, i) => {
+    obj[i] = 0
+    return obj
+  }, {})
+}
+let obj = creatingProdCOuntObj()
 empty.addEventListener('click',(e)=>{
  
   localStorage.setItem('cart', JSON.stringify(creatingArr()))
   localStorage.setItem('totalProd', JSON.stringify(0))
+  localStorage.setItem('singelCount', JSON.stringify(obj))
   let element = document.querySelector('.cart__result');
   while (element.firstChild) {
     element.removeChild(element.firstChild);
@@ -51,7 +62,6 @@ empty.addEventListener('click',(e)=>{
 
 function getCartData(){
   let cart=JSON.parse(localStorage.getItem('cart'))
-  console.log(cart)
   
   if(!cart){
     cartText.style.display = 'block'
@@ -80,13 +90,16 @@ function getCartData(){
     
     item.addEventListener('click', (e) => {
       let cart = JSON.parse(localStorage.getItem('cart'))
+      let singelCount = JSON.parse(localStorage.getItem('singelCount'))
       cart[e.target.parentElement.id]=[]
+      singelCount[e.target.parentElement.id]=0
+
       localStorage.setItem('cart',JSON.stringify(cart))
       localStorage.setItem('totalProd', cart.flat().length)
+      localStorage.setItem('singelCount', JSON.stringify(singelCount))
       cartCount.innerHTML = localStorage.getItem('totalProd')
       sum.innerHTML = calSum()
       e.target.parentElement.remove()
-      console.log(cart)
       if(!cart.flat().length){
         wrapper.style.display = 'none'
         cartText.style.display = 'block'
@@ -102,6 +115,7 @@ input.forEach(item=>{
   item.addEventListener('input',(e)=>{
     let id = e.target.parentElement.parentElement.id
     let cart = JSON.parse(localStorage.getItem('cart'))
+    let singelCount = JSON.parse(localStorage.getItem('singelCount'))
     localStorage.setItem('totalProd', cart.flat().length)
     let temArr=[]
     // if (e.target.value==0){
@@ -116,7 +130,9 @@ input.forEach(item=>{
         temArr.push(cart[id][0])
       }
       cart[id]=temArr
+      singelCount[id] = parseInt(e.target.value)
       localStorage.setItem('cart',JSON.stringify(cart))
+      localStorage.setItem('singelCount', JSON.stringify(singelCount))
       localStorage.setItem('totalProd', JSON.stringify(cart.flat().length))
       cartCount.innerHTML = localStorage.getItem('totalProd')
       sum.innerHTML = calSum()
